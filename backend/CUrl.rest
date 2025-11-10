@@ -1,0 +1,41 @@
+### Check API Health
+GET http://localhost:3000/api/health
+
+### 1. Request Login Email OTP
+POST http://localhost:3000/api/auth/login/email/request-otp
+Content-Type: application/json
+
+{
+    "email": "jason@example.com"
+}
+
+### 2. Verify Login Email OTP (Run this after you get the OTP)
+POST http://localhost:3000/api/auth/signup/email/verify-otp
+Content-Type: application/json
+
+{
+  "email": "pahwaharman76@gmail.com",
+  "otp": "242358",
+  "name": "Harman"
+}
+
+
+### (Optional) Signup if you don't have an account
+POST http://localhost:3000/api/auth/signup/email/request-otp
+Content-Type: application/json
+
+{
+    "email": "kio@example.com",
+    "name": "Kio"
+}
+
+### checking
+GET http://localhost:3000/api/health
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2OTBkZjM4NzQ4ZmJiMWQ2ZDJkZWYwYTQiLCJlbWFpbCI6Imtpb0BleGFtcGxlLmNvbSIsImlhdCI6MTc2MjUyMTk5MSwiZXhwIjoxNzYyNTIyODkxfQ.29-XdDg51wZkmJt0cNDcPnNQGPgfVOpxSOb6q2uH43U
+
+
+###real email
+POST http://localhost:3000/api/auth/signup/email/request-otp
+Content-Type: application/json
+
+{ "email": "pahwaharman76@gmail.com", "name": "Harman" }
